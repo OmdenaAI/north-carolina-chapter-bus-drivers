@@ -1,3 +1,4 @@
-library("rJava")
+install.packages("rJava")
 install.packages("xlsx")
-library("xlsx")
+install.packages("ggplot2")
+install.packages("readxl")

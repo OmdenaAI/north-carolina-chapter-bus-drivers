@@ -3,8 +3,9 @@ if (!require("pacman")) install.packages("pacman")
 
 pacman::p_load(pacman, party, rio, tidyverse, httpgd, languageserver)
 #Scatterplots
-
-(df <- import("/home/aaronl/north-carolina-chapter-bus-drivers/src/data/Winston_Salem_Bus_Riders_imputed.xlsx")%>% 
+hgd()
+hgd_browse()
+(df <- import("~/Documents/GitHub/north-carolina-chapter-bus-drivers/src/data/Winston_Salem_Bus_Riders_imputed.xlsx")%>% 
 as_tibble()) %>%
 select(wage_primary_job, annual_inc) %>%
  print()
@@ -43,3 +44,4 @@ hist(df$wage_primary_job,
   border = NA,  # No borders on bars
   col    = "#CD0000"  # red3
   )
+ # open browser

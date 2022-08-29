@@ -56,17 +56,17 @@ node HaveCar
      states = ("State 0");
 }
 
-decision RidingBus
-{
-     label = "is the person riding the bus";
-     position = (487 435);
-     states = ("Action 0" "Action 1");
-}
-
 node UnemploymentRate
 {
      label = "C3";
      position = (196 320);
+     states = ("State 0");
+}
+
+node BusRidership
+{
+     label = "Are they riding the bus";
+     position = (525 480);
      states = ("State 0");
 }
 
@@ -112,12 +112,40 @@ potential (HaveCar | WhatZipcode)
  data = (( 1.0 ));
 }
 
-potential (RidingBus | CommuteTime WhatZipcode UnemploymentRate Weekday Race HaveJob)
-{
-}
-
 potential (UnemploymentRate | WhatZipcode)
 {
  data = (( 1.0 ));
+}
+
+potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)
+{
+ data = (((((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))))
+((((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 ))))));
 }
 

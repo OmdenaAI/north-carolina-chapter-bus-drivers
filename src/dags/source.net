@@ -1,0 +1,123 @@
+net
+{
+     node_size = (0 0);
+     name = "New BN";
+     tree = "(What race is the passengers,What day of the week is weekday or weekend,Does the riders mostly have jobs,Zip code input,How long is the commute,PerCapitaIncome,does the person have a car)";
+     UnBBayes_Color_Probabilistic_Description = "-256";
+     UnBBayes_Color_Probabilistic_Explanation = "-16711936";
+}
+
+node Race
+{
+     label = "What race is the passengers";
+     position = (312 460);
+     states = ("State 0" "State 1");
+}
+
+node Weekday
+{
+     label = "What day of the week is weekday or weekend";
+     position = (123 122);
+     states = ("State 0" "State 1" "State 2" "State 3" "State 4" "State 5" "State 6");
+}
+
+node HaveJob
+{
+     label = "Does the riders mostly have jobs";
+     position = (1126 269);
+     states = ("State 0");
+}
+
+node WhatZipcode
+{
+     label = "Zip code input";
+     position = (511 111);
+     states = ("State 0");
+}
+
+node CommuteTime
+{
+     label = "How long is the commute";
+     position = (865 384);
+     states = ("State 0" "State 1");
+}
+
+node PerCapitaIncome
+{
+     label = "PerCapitaIncome";
+     position = (830 38);
+     states = ("State 0");
+}
+
+node HaveCar
+{
+     label = "does the person have a car";
+     position = (595 21);
+     states = ("State 0");
+}
+
+decision RidingBus
+{
+     label = "is the person riding the bus";
+     position = (487 435);
+     states = ("Action 0" "Action 1");
+}
+
+node UnemploymentRate
+{
+     label = "C3";
+     position = (196 320);
+     states = ("State 0");
+}
+
+potential (Race)
+{
+ data = ( 1.0 0.0 );
+}
+
+potential (Weekday)
+{
+ data = ( 0.142 0.142 0.142 0.142 0.142 0.142 0.142 );
+}
+
+potential (HaveJob | PerCapitaIncome UnemploymentRate HaveCar Weekday)
+{
+ data = ((((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))));
+}
+
+potential (WhatZipcode | Race)
+{
+ data = (( 1.0 )
+( 1.0 ));
+}
+
+potential (CommuteTime)
+{
+ data = ( 1.0 0.0 );
+}
+
+potential (PerCapitaIncome | WhatZipcode)
+{
+ data = (( 1.0 ));
+}
+
+potential (HaveCar | WhatZipcode)
+{
+ data = (( 1.0 ));
+}
+
+potential (RidingBus | CommuteTime WhatZipcode UnemploymentRate Weekday Race HaveJob)
+{
+}
+
+potential (UnemploymentRate | WhatZipcode)
+{
+ data = (( 1.0 ));
+}
+

@@ -2,7 +2,7 @@ net
 {
      node_size = (0 0);
      name = "New BN";
-     tree = "(What race is the passengers,What day of the week is weekday or weekend,Does the riders mostly have jobs,Zip code input,How long is the commute,PerCapitaIncome,does the person have a car)";
+     tree = "(What race is the passengers,What day of the week is weekday or weekend,Does the riders mostly have jobs,Zip code input,How long is the commute,PerCapitaIncome,does the person have a car,C3,Are they riding the bus)";
      UnBBayes_Color_Probabilistic_Description = "-256";
      UnBBayes_Color_Probabilistic_Explanation = "-16711936";
 }
@@ -11,7 +11,7 @@ node Race
 {
      label = "What race is the passengers";
      position = (312 460);
-     states = ("State 0" "State 1");
+     states = ("Black" "White" "Other");
 }
 
 node Weekday
@@ -72,7 +72,7 @@ node BusRidership
 
 potential (Race)
 {
- data = ( 1.0 0.0 );
+ data = ( 0.814 0.1302 0.0372 );
 }
 
 potential (Weekday)
@@ -94,6 +94,7 @@ potential (HaveJob | PerCapitaIncome UnemploymentRate HaveCar Weekday)
 potential (WhatZipcode | Race)
 {
  data = (( 1.0 )
+( 1.0 )
 ( 1.0 ));
 }
 
@@ -120,6 +121,20 @@ potential (UnemploymentRate | WhatZipcode)
 potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)
 {
  data = (((((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))))
+((((( 1.0 )
 ( 1.0 )
 ( 1.0 )
 ( 1.0 )

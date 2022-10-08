@@ -32,7 +32,7 @@ node WhatZipcode
 {
      label = "Zip code input";
      position = (511 111);
-     states = ("State 0");
+     states = ("27105" "27101" "27107");
 }
 
 node CommuteTime
@@ -93,9 +93,9 @@ potential (HaveJob | PerCapitaIncome UnemploymentRate HaveCar Weekday)
 
 potential (WhatZipcode | Race)
 {
- data = (( 1.0 )
-( 1.0 )
-( 1.0 ));
+ data = (( 0.5558 0.1389 0.119 )
+( 0.0889 0.0222 0.019 )
+( 0.0254 0.00635 0.00544236 ));
 }
 
 potential (CommuteTime)
@@ -105,17 +105,23 @@ potential (CommuteTime)
 
 potential (PerCapitaIncome | WhatZipcode)
 {
- data = (( 1.0 ));
+ data = (( 1.0 )
+( 1.0 )
+( 1.0 ));
 }
 
 potential (HaveCar | WhatZipcode)
 {
- data = (( 1.0 ));
+ data = (( 1.0 )
+( 1.0 )
+( 1.0 ));
 }
 
 potential (UnemploymentRate | WhatZipcode)
 {
- data = (( 1.0 ));
+ data = (( 1.0 )
+( 1.0 )
+( 1.0 ));
 }
 
 potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)
@@ -133,8 +139,22 @@ potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)
 ( 1.0 )
 ( 1.0 )
 ( 1.0 )
-( 1.0 )))))
-((((( 1.0 )
+( 1.0 ))))
+(((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 ))))
+(((( 1.0 )
 ( 1.0 )
 ( 1.0 )
 ( 1.0 )
@@ -149,6 +169,76 @@ potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)
 ( 1.0 )
 ( 1.0 )))))
 ((((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 ))))
+(((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 ))))
+(((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))))
+((((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 ))))
+(((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )))
+((( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 )
+( 1.0 ))))
+(((( 1.0 )
 ( 1.0 )
 ( 1.0 )
 ( 1.0 )
@@ -163,4 +253,3 @@ potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)
 ( 1.0 )
 ( 1.0 ))))));
 }
-

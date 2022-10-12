@@ -60,7 +60,7 @@ node UnemploymentRate
 {
      label = "C3";
      position = (196 320);
-     states = ("State 0");
+     states = ("rate");
 }
 
 node BusRidership
@@ -119,9 +119,9 @@ potential (HaveCar | WhatZipcode)
 
 potential (UnemploymentRate | WhatZipcode)
 {
- data = (( 1.0 )
-( 1.0 )
-( 1.0 ));
+ data = (( 0.1314759 )
+( 0.109207 )
+( 0.099684 ));
 }
 
 potential (BusRidership | Race WhatZipcode CommuteTime HaveJob Weekday)

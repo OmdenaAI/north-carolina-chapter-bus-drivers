@@ -1,8 +1,7 @@
-# chapter-project-repository-template
-Use this Repository as a template for creating Local Chapter Repositories
 
 
-# [Chapter Challenge Name]
+
+# [Omdena-Bus-Riders Phase I && Phase II]
 
 
 ## Contribution Guidelines
